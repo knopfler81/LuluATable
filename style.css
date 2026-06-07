@@ -12,7 +12,10 @@
 
 /* ── RESET & BASE ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 18px; /* base augmentée : tout ce qui est en rem grossit uniformément */
+}
 body {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
@@ -51,8 +54,8 @@ nav {
 .nav-links a {
   text-decoration: none;
   color: var(--texte-light);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: color 0.3s;
 }
@@ -136,8 +139,8 @@ nav {
 }
 
 .hero-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.42em;
+  font-size: 0.7rem;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
   color: var(--or);
   margin-bottom: 1.8rem;
@@ -193,9 +196,9 @@ nav {
   border: 1px solid var(--bordeaux);
   color: var(--bordeaux);
   text-decoration: none;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   transition: background 0.35s, color 0.35s;
   animation: fadeUp 0.9s 0.54s ease both;
@@ -210,8 +213,8 @@ nav {
 }
 .section-label {
   display: block;
-  font-size: 0.62rem;
-  letter-spacing: 0.38em;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--or);
   margin-bottom: 0.7rem;
@@ -270,8 +273,8 @@ nav {
   line-height: 1;
 }
 .chiffre-lbl {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--texte-light);
   margin-top: 0.4rem;
@@ -297,9 +300,9 @@ nav {
   cursor: pointer;
   padding: 0.85rem 2.5rem;
   font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--texte-light);
   position: relative;
@@ -353,7 +356,7 @@ nav {
 .menu-note-bas {
   text-align: center;
   margin-top: 2.5rem;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--texte-light);
   font-style: italic;
 }
@@ -402,9 +405,9 @@ nav {
   line-height: 1;
 }
 .tarif-desc {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--texte-light);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-top: 0.5rem;
 }
 
@@ -428,8 +431,8 @@ nav {
 .info-body strong {
   display: block;
   font-weight: 400;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--texte);
   margin-bottom: 0.2rem;
@@ -444,9 +447,9 @@ nav {
   background: var(--bordeaux);
   color: var(--beige-light);
   text-decoration: none;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: background 0.3s;
 }
@@ -464,7 +467,7 @@ nav {
 .horaires td { padding: 0.65rem 0; font-size: 0.87rem; color: var(--texte-light); }
 .horaires td:first-child { color: var(--texte); font-weight: 400; width: 150px; }
 .horaires .ferme { color: rgba(107,26,26,0.38); font-style: italic; }
-.horaires-note { margin-top: 1.2rem; font-size: 0.77rem; color: var(--texte-light); font-style: italic; line-height: 1.7; }
+.horaires-note { margin-top: 1.2rem; font-size: 0.84rem; color: var(--texte-light); font-style: italic; line-height: 1.7; }
 
 /* ── FOOTER ── */
 footer {
@@ -472,8 +475,8 @@ footer {
   color: rgba(250,244,236,0.38);
   text-align: center;
   padding: 2.2rem 2rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
   line-height: 1.9;
 }
 footer a { color: rgba(250,244,236,0.55); text-decoration: none; }
