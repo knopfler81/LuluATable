@@ -32,7 +32,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 4rem;
-  background: rgba(250, 244, 236, 0.95);
+  background: var(--texte);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(107, 26, 26, 0.1);
 }
@@ -41,7 +41,7 @@ nav {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.45rem;
   font-style: italic;
-  color: var(--bordeaux);
+  color: var(--or);
   letter-spacing: 0.02em;
 }
 
@@ -53,13 +53,13 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--texte-light);
+  color: var(--or);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: color 0.3s;
 }
-.nav-links a:hover { color: var(--bordeaux); }
+.nav-links a:hover { color: var(--beige-light); }
 
 /* ── HAMBURGER ── */
 .hamburger {
@@ -203,7 +203,7 @@ nav {
   transition: background 0.35s, color 0.35s;
   animation: fadeUp 0.9s 0.54s ease both;
 }
-.btn-outline:hover { background: var(--bordeaux); color: var(--beige-light); }
+.btn-outline:hover { background: var(--or); color: var(--beige-light); }
 
 /* ── SECTIONS ── */
 .section-wrap {
@@ -444,7 +444,7 @@ nav {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.95rem 2.8rem;
-  background: var(--bordeaux);
+  background: var(--texte);
   color: var(--beige-light);
   text-decoration: none;
   font-size: 0.75rem;
@@ -453,7 +453,7 @@ nav {
   text-transform: uppercase;
   transition: background 0.3s;
 }
-.btn-plein:hover { background: var(--bordeaux-alt); }
+.btn-plein:hover { background: var(--or); }
 
 .horaires h3 {
   font-family: 'Cormorant Garamond', serif;
