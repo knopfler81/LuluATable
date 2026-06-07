@@ -1,0 +1,505 @@
+:root {
+  --beige:         #f5ede0;
+  --beige-light:   #faf4ec;
+  --beige-mid:     #ede0cc;   /* beige plus soutenu pour alterner les sections */
+  --beige-dark:    #e2d0b8;   /* beige foncé pour section tarifs */
+  --bordeaux:      #6b1a1a;
+  --bordeaux-alt:  #8c2d2d;
+  --or:            #c4924a;
+  --texte:         #2a1a0e;
+  --texte-light:   #6b5744;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: var(--beige-light);
+  color: var(--texte);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(250, 244, 236, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(107, 26, 26, 0.1);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texte-light);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--bordeaux); }
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 300;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--bordeaux);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* Hamburger ouvert → croix */
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Menu mobile overlay */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--beige-light);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav-mobile.open { display: flex; }
+
+.nav-mobile a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--bordeaux);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+.nav-mobile a:hover { opacity: 0.6; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  background: var(--beige);
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 15% 85%, rgba(107,26,26,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 85% 15%, rgba(196,146,74,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1.8rem;
+  animation: fadeUp 0.9s ease both;
+}
+.hero-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4.5rem, 11vw, 9rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bordeaux);
+  line-height: 0.88;
+  margin-bottom: 0.6rem;
+  animation: fadeUp 0.9s 0.12s ease both;
+}
+.hero-sous {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  font-weight: 300;
+  color: var(--texte-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 2.2rem;
+  animation: fadeUp 0.9s 0.24s ease both;
+}
+.separateur {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0.5rem auto 1.8rem;
+  animation: fadeUp 0.9s 0.34s ease both;
+}
+.separateur::before,
+.separateur::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 1px;
+  background: rgba(107,26,26,0.3);
+}
+.separateur-losange { color: var(--bordeaux); font-size: 0.55rem; opacity: 0.7; }
+
+.hero-intro {
+  max-width: 500px;
+  font-size: 0.93rem;
+  line-height: 2;
+  color: var(--texte-light);
+  margin-bottom: 3rem;
+  animation: fadeUp 0.9s 0.44s ease both;
+}
+.btn-outline {
+  display: inline-block;
+  padding: 0.9rem 3.2rem;
+  border: 1px solid var(--bordeaux);
+  color: var(--bordeaux);
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: background 0.35s, color 0.35s;
+  animation: fadeUp 0.9s 0.54s ease both;
+}
+.btn-outline:hover { background: var(--bordeaux); color: var(--beige-light); }
+
+/* ── SECTIONS ── */
+.section-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 7rem 4rem;
+}
+.section-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.7rem;
+}
+.section-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bordeaux);
+  line-height: 1.1;
+}
+
+/* ── ESPRIT ── */
+#esprit { background: var(--beige-light); }
+
+.esprit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.esprit-texte p {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: var(--texte-light);
+  margin-top: 1.4rem;
+}
+.esprit-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  border-left: 2px solid var(--or);
+  padding-left: 1.5rem;
+  margin: 2.2rem 0;
+  line-height: 1.55;
+}
+
+.esprit-chiffres { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.chiffre-card {
+  border: 1px solid rgba(107,26,26,0.18);
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  background: var(--beige);
+}
+.chiffre-card::before { content:'◆'; position:absolute; top:.6rem; left:.6rem; font-size:.45rem; color:var(--bordeaux); opacity:.4; }
+.chiffre-card::after  { content:'◆'; position:absolute; bottom:.6rem; right:.6rem; font-size:.45rem; color:var(--bordeaux); opacity:.4; }
+.chiffre-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--bordeaux);
+  display: block;
+  line-height: 1;
+}
+.chiffre-lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texte-light);
+  margin-top: 0.4rem;
+  display: block;
+}
+.chiffre-card.wide { grid-column: 1 / -1; }
+
+/* ── MENU ── */
+#menu { background: var(--beige); }
+
+.menu-header { text-align: center; margin-bottom: 3.5rem; }
+.menu-header p { font-size: 0.87rem; color: var(--texte-light); margin-top: .6rem; font-style: italic; }
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(107,26,26,0.14);
+  margin-bottom: 3rem;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.85rem 2.5rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--texte-light);
+  position: relative;
+  transition: color 0.3s;
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: var(--bordeaux);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.tab-btn.active { color: var(--bordeaux); }
+.tab-btn.active::after { transform: scaleX(1); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1px;
+  background: rgba(107,26,26,0.09);
+}
+.menu-item {
+  background: var(--beige);
+  padding: 1.8rem 2rem;
+  transition: background 0.3s;
+}
+.menu-item:hover { background: var(--beige-light); }
+.menu-nom {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--texte);
+  margin-bottom: 0.35rem;
+}
+.menu-desc {
+  font-size: 0.82rem;
+  color: var(--texte-light);
+  line-height: 1.75;
+  font-style: italic;
+}
+.menu-prix {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--bordeaux);
+}
+.menu-note-bas {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.78rem;
+  color: var(--texte-light);
+  font-style: italic;
+}
+.menu-loading {
+  text-align: center;
+  padding: 4rem;
+  color: var(--texte-light);
+  font-style: italic;
+}
+
+/* ── TARIFS — fond beige foncé, textes bordeaux et texte foncé ── */
+#tarifs { background: var(--beige-dark); }
+
+.tarifs-inner { text-align: center; }
+
+.tarifs-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+}
+.tarif-card {
+  border: 1px solid rgba(107,26,26,0.2);
+  padding: 2.5rem 3rem;
+  min-width: 200px;
+  background: var(--beige);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.tarif-card:hover {
+  background: var(--beige-light);
+  box-shadow: 0 4px 24px rgba(107,26,26,0.07);
+}
+.tarif-nom {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  margin-bottom: 0.6rem;
+}
+.tarif-prix {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1;
+}
+.tarif-desc {
+  font-size: 0.72rem;
+  color: var(--texte-light);
+  letter-spacing: 0.1em;
+  margin-top: 0.5rem;
+}
+
+/* ── CONTACT ── */
+#contact { background: var(--beige-light); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.info-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.3rem;
+}
+.info-puce { color: var(--or); flex-shrink: 0; font-size: 0.55rem; margin-top: 0.35rem; }
+.info-body { font-size: 0.87rem; line-height: 1.75; color: var(--texte-light); }
+.info-body strong {
+  display: block;
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texte);
+  margin-bottom: 0.2rem;
+}
+.info-body a { color: var(--bordeaux); text-decoration: none; }
+.info-body a:hover { text-decoration: underline; }
+
+.btn-plein {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.95rem 2.8rem;
+  background: var(--bordeaux);
+  color: var(--beige-light);
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.btn-plein:hover { background: var(--bordeaux-alt); }
+
+.horaires h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  margin-bottom: 1.8rem;
+}
+.horaires table { width: 100%; border-collapse: collapse; }
+.horaires tr { border-bottom: 1px solid rgba(107,26,26,0.08); }
+.horaires td { padding: 0.65rem 0; font-size: 0.87rem; color: var(--texte-light); }
+.horaires td:first-child { color: var(--texte); font-weight: 400; width: 150px; }
+.horaires .ferme { color: rgba(107,26,26,0.38); font-style: italic; }
+.horaires-note { margin-top: 1.2rem; font-size: 0.77rem; color: var(--texte-light); font-style: italic; line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--texte);
+  color: rgba(250,244,236,0.38);
+  text-align: center;
+  padding: 2.2rem 2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+}
+footer a { color: rgba(250,244,236,0.55); text-decoration: none; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .section-wrap { padding: 5rem 1.6rem; }
+  .esprit-grid,
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .esprit-chiffres { grid-template-columns: 1fr 1fr; }
+  .tarifs-grid { flex-direction: column; align-items: center; }
+  .tarif-card { width: 100%; max-width: 340px; }
+}

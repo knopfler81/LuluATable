@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lulu à Table — Restaurant Bistronomique · Saint-Just-Saint-Rambert</title>
+  <meta name="description" content="Restaurant Lulu à Table à Saint-Just-Saint-Rambert — cuisine de saison, plats mijotés avec passion dans un cadre intimiste.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────── -->
+<nav>
+  <span class="nav-logo">Lulu à Table</span>
+
+  <!-- Desktop -->
+  <ul class="nav-links">
+    <li><a href="#hero">Accueil</a></li>
+    <li><a href="#esprit">L'esprit</a></li>
+    <li><a href="#menu">La carte</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#contact">Réserver</a></li>
+  </ul>
+
+  <!-- Hamburger mobile -->
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Menu mobile overlay -->
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Menu navigation">
+  <a href="#hero">Accueil</a>
+  <a href="#esprit">L'esprit</a>
+  <a href="#menu">La carte</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#contact">Réserver</a>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <span class="hero-label">Restaurant bistronomique · Saint-Just-Saint-Rambert</span>
+  <h1 class="hero-titre">Lulu<br>à Table</h1>
+  <p class="hero-sous">Cuisine de saison, mijotée avec passion</p>
+  <div class="separateur">
+    <span class="separateur-losange">◆</span>
+  </div>
+  <p class="hero-intro">
+    Dans un cadre intimiste au cœur du val de Loire, découvrez une cuisine créative qui célèbre les produits du terroir et l'art de recevoir.
+  </p>
+  <a href="#menu" class="btn-outline">Découvrir la carte</a>
+</section>
+
+<!-- ── L'ESPRIT ──────────────────────────────────────────── -->
+<section id="esprit">
+  <div class="section-wrap">
+    <div class="esprit-grid">
+
+      <div class="esprit-texte reveal">
+        <span class="section-label">Notre histoire</span>
+        <h2 class="section-titre">L'esprit de la maison</h2>
+        <p>Nichée dans la campagne de Saint-Just-Saint-Rambert, Lulu à Table est une invitation à ralentir, savourer, partager.</p>
+        <p>Notre carte, renouvelée au fil des saisons, met à l'honneur les saveurs locales et les associations audacieuses. Chaque assiette raconte une histoire de passion et de précision.</p>
+        <blockquote class="esprit-quote">
+          « Des pupilles aux papilles,<br>tout est ravissant. »
+        </blockquote>
+        <p>L'établissement partage son âme avec Les Petits Greniers, atelier design et décoration — et cela se ressent dans chaque détail de la salle.</p>
+      </div>
+
+      <div class="reveal" style="transition-delay: 0.15s">
+        <div class="esprit-chiffres">
+          <div class="chiffre-card">
+            <span class="chiffre-val">4,5</span>
+            <span class="chiffre-lbl">/ 5 sur Google</span>
+          </div>
+          <div class="chiffre-card">
+            <span class="chiffre-val">247</span>
+            <span class="chiffre-lbl">avis clients</span>
+          </div>
+          <div class="chiffre-card wide">
+            <span class="chiffre-val" style="font-size:2.2rem; letter-spacing:0.04em">100 %</span>
+            <span class="chiffre-lbl">le recommandent</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── LA CARTE ──────────────────────────────────────────── -->
+<section id="menu">
+  <div class="section-wrap">
+
+    <div class="menu-header reveal">
+      <span class="section-label">Saison en cours</span>
+      <h2 class="section-titre">La carte</h2>
+      <p>Une sélection renouvelée selon les arrivages et l'inspiration du chef.</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="switchTab('entrees', this)">Entrées</button>
+      <button class="tab-btn"        onclick="switchTab('plats', this)">Plats chauds</button>
+    </div>
+
+    <div id="tab-entrees" class="tab-panel active">
+      <div id="menu-entrees" class="menu-loading">Chargement de la carte…</div>
+    </div>
+    <div id="tab-plats" class="tab-panel">
+      <div id="menu-plats" class="menu-loading">Chargement de la carte…</div>
+    </div>
+
+    <p class="menu-note-bas reveal">
+      Carte sujette à modifications selon les arrivages · Allergènes disponibles sur demande
+    </p>
+
+  </div>
+</section>
+
+<!-- ── TARIFS ────────────────────────────────────────────── -->
+<section id="tarifs">
+  <div class="section-wrap tarifs-inner">
+    <span class="section-label">Nos formules</span>
+    <h2 class="section-titre">Tarifs</h2>
+    <div class="tarifs-grid">
+      <div class="tarif-card reveal">
+        <div class="tarif-nom">Menu déjeuner</div>
+        <div class="tarif-prix">à partir de 36 €</div>
+        <div class="tarif-desc">Entrée · Plat · Dessert</div>
+      </div>
+      <div class="tarif-card reveal" style="transition-delay:.1s">
+        <div class="tarif-nom">Menu découverte</div>
+        <div class="tarif-prix">Sur place</div>
+        <div class="tarif-desc">Carte complète · Selon saison</div>
+      </div>
+      <div class="tarif-card reveal" style="transition-delay:.2s">
+        <div class="tarif-nom">Événements privés</div>
+        <div class="tarif-prix">Sur devis</div>
+        <div class="tarif-desc">Séminaires · Anniversaires · Soirées</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="contact-grid">
+
+      <div class="reveal">
+        <span class="section-label">Nous trouver</span>
+        <h2 class="section-titre" style="margin-bottom:2rem">Informations pratiques</h2>
+
+        <div class="info-row">
+          <span class="info-puce">◆</span>
+          <div class="info-body">
+            <strong>Adresse</strong>
+            2930 Route de Cordeyron<br>
+            42170 Saint-Just-Saint-Rambert
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-puce">◆</span>
+          <div class="info-body">
+            <strong>Téléphone</strong>
+            <a href="tel:+33767119843">07 67 11 98 43</a>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-puce">◆</span>
+          <div class="info-body">
+            <strong>Facebook</strong>
+            <a href="https://www.facebook.com/p/Lulu-%C3%A0-Table-100071564794122/" target="_blank" rel="noopener">Lulu à Table</a>
+          </div>
+        </div>
+
+        <a href="tel:+33767119843" class="btn-plein">Réserver une table</a>
+      </div>
+
+      <div class="horaires reveal" style="transition-delay:.15s">
+        <h3>Horaires d'ouverture</h3>
+        <table>
+          <tbody>
+            <tr><td>Lundi</td>    <td class="ferme">Fermé</td></tr>
+            <tr><td>Mardi</td>    <td>Midi &amp; soir</td></tr>
+            <tr><td>Mercredi</td> <td>Midi &amp; soir</td></tr>
+            <tr><td>Jeudi</td>    <td>Midi &amp; soir</td></tr>
+            <tr><td>Vendredi</td> <td>Midi &amp; soir</td></tr>
+            <tr><td>Samedi</td>   <td>Midi &amp; soir</td></tr>
+            <tr><td>Dimanche</td> <td class="ferme">Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="horaires-note">
+          Horaires indicatifs — vérifier via Facebook ou par téléphone.<br>
+          Réservation recommandée.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Lulu à Table · 2930 Route de Cordeyron, 42170 Saint-Just-Saint-Rambert</p>
+  <p><a href="tel:+33767119843">07 67 11 98 43</a> · <a href="https://www.facebook.com/p/Lulu-%C3%A0-Table-100071564794122/" target="_blank" rel="noopener">Facebook</a></p>
+  <p style="margin-top:.5rem; font-size:.62rem; opacity:.5;">Atelier design : Les Petits Greniers</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
